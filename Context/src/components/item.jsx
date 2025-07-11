@@ -4,7 +4,7 @@ import { CartContext } from "../context/CartContext";
 
 export const Item = ({ id, name, price, image }) => {
     const navigate = useNavigate();
-    const { setNumberOfItemInCart } = useContext(CartContext);
+    const { setNumberOfItemsInCart } = useContext(CartContext);
     const handleClick = () => {
         const url= `/detail/${id}`;
         navigate(url);
@@ -17,8 +17,9 @@ export const Item = ({ id, name, price, image }) => {
       <p>₩ {price.toLocaleString()}</p>
       <button
         className="border-1 border-gray-300 bg-gray-200/50"
-        onClick={() => {
-          setNumberOfItemInCart((prev) => prev + 1);
+        onClick={(e) => {
+            e.stopPropagation();
+          setNumberOfItemsInCart((prev) => prev + 1);
         }}
       >
         Add to Cart
