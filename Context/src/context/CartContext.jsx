@@ -3,6 +3,7 @@ import { createContext, useState, useEffect } from "react";
 export const CartContext = createContext();
 
 export function CartProvider({ children }) {
+    
   // 장바구니 아이템 수 불러오기
   const [numberOfItemsInCart, setNumberOfItemsInCart] = useState(() => {
     const saved = localStorage.getItem("cartCount");
