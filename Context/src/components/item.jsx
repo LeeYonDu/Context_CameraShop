@@ -27,7 +27,7 @@ export const Item = ({ id, name, price, image }) => {
       <p className="text-center">{name}</p>
       <p>₩ {price.toLocaleString()}</p>
       <button
-        className="border-1 border-gray-300 bg-gray-200/50"
+        className="border-1 border-black bg-gray-200 text-red-500 px-4 py-2 rounded-[10px] border border-transparent hover:border-red-500"
         onClick={(e) => {
           e.stopPropagation(); //-> 상세페이지 onclick으로 안 넘어가게 함
           addToCart();        
